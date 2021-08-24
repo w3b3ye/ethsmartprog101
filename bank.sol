@@ -48,9 +48,9 @@ contract Bank is Destroyable, Ownable {
         balance[to] += amount;
     }
 
-    function destruct() public onlyOwner {
+    function kill() public onlyOwner {
         require(
-            balance[msg.sender] >= 0,
+            balance[msg.sender] == 0,
             "Contract still   has balance, please empty."
         );
         Destroyable.destruct();

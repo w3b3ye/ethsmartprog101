@@ -10,7 +10,7 @@ contract Destroyable {
         owner = msg.sender;
     }
 
-    function destruct() public {
+    function destruct() internal {
         selfdestruct(owner);
     }
 }
